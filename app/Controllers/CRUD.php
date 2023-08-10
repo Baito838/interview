@@ -85,7 +85,7 @@ class Crud extends BaseController
         if ($foto->getError() == 4) {
             $db->query("UPDATE tab_karyawan set nama_karyawan = '$nama_karyawan', kota = $kota_karyawan, foto = '$foto_lama' WHERE id = '$id'");
 
-            session()->setFlashdata('success', "Data berhasil dihapus");
+            session()->setFlashdata('success', "Data berhasil diubah");
             return redirect()->to('/');
         } else {
 
@@ -94,7 +94,7 @@ class Crud extends BaseController
             $foto->move('upload', $nama_foto);
             $db->query("UPDATE tab_karyawan set nama_karyawan = '$nama_karyawan', kota = $kota_karyawan, foto = '$nama_foto' WHERE id = '$id'");
 
-            session()->setFlashdata('success', "Data berhasil dihapus");
+            session()->setFlashdata('success', "Data berhasil diubah");
             return redirect()->to('/');
         }
 
